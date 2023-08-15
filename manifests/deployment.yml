@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pelstixpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pelstixpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: pelstixpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: pelstixpipelinesjavascriptdocker 
+          image: devopsmasterclass.azurecr.io/pelstixpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
